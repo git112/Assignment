@@ -1,0 +1,145 @@
+
+.card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  }
+  
+  .imageContainer {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .card:hover .image {
+    transform: scale(1.05);
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .showOverlay {
+    opacity: 1;
+  }
+  
+  .button {
+    background-color: #9b87f5;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 15px rgba(155, 135, 245, 0.4);
+  }
+  
+  .button:hover {
+    background-color: #7E69AB;
+    transform: scale(1.05);
+  }
+  
+  .content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .namePrice {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+  }
+  
+  .name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+    color: #333;
+  }
+  
+  .price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+    color: #9b87f5;
+  }
+  
+  .description {
+    color: #666;
+    line-height: 1.5;
+    font-size: 0.9rem;
+    margin: 0;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .imageContainer {
+      height: 180px;
+    }
+    
+    .content {
+      padding: 1.25rem;
+    }
+    
+    .name {
+      font-size: 1.1rem;
+    }
+    
+    .price {
+      font-size: 1.1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .imageContainer {
+      height: 160px;
+    }
+    
+    .content {
+      padding: 1rem;
+    }
+    
+    .button {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+    }
+    
+    /* For mobile, make the overlay always visible with touch */
+    .overlay {
+      opacity: 1;
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
+  
